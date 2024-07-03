@@ -2,7 +2,7 @@ import { GetUserByIdUseCase } from "../../application/use-cases/getUserByIdUseCa
 import { Request, Response } from "express";
 
 export class GetUserByIdController {
-    constructor(private getUserByIdUseCase: GetUserByIdUseCase) {}
+    constructor(readonly getUserByIdUseCase: GetUserByIdUseCase) {}
     
     async handle(req: Request, res: Response) {
         try {

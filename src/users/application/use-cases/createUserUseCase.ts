@@ -10,8 +10,9 @@ export class CreateUserUseCase {
             if (UserExists) {
                 throw new Error("User already exists");
             }
+            const newUser = await this.userService.createUser(user)
 
-            return  await this.userService.createUser(user);
+            return newUser;
         }
         catch (error) {
             return null;

@@ -1,5 +1,6 @@
 export class User {
     constructor(
+        readonly user_id: number,
         readonly username: string,
         readonly password: string,
         readonly email: string,
@@ -7,7 +8,6 @@ export class User {
         readonly updated_at: Date,
         readonly updated_by: number,
         readonly deleted_at: Date,
-        readonly user_id: number,
         readonly deleted_by: number,
         readonly deleted: number
     ) {}

@@ -2,7 +2,7 @@ import { User } from "../../domain/models/User";
 import { UserService } from "../../domain/services/UserService";
 
 export class GetUserByIdUseCase {
-    constructor(private readonly userService: UserService) {}
+    constructor(readonly userService: UserService) {}
 
     async execute(user_id: number): Promise<User | null> {
         try {
