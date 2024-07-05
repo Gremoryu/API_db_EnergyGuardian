@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import { createUserController } from "../../infrastructure/dependencies";
-import { getUserByIdController } from "../../infrastructure/dependencies";
-import { getUserByUsernameController } from "../../infrastructure/dependencies";
-import { updateUserController } from "../../infrastructure/dependencies";
-import { deleteUserController } from "../../infrastructure/dependencies";
+import { createUserController } from "../../infrastructure/UserDependencies";
+import { getUserByIdController } from "../../infrastructure/UserDependencies";
+import { getUserByUsernameController } from "../../infrastructure/UserDependencies";
+import { updateUserController } from "../../infrastructure/UserDependencies";
+import { deleteUserController } from "../../infrastructure/UserDependencies";
 
 const UserRouter = Router();
 

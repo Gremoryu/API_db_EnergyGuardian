@@ -55,7 +55,7 @@ export class MySqlUserRepository implements UserService {
         return result;
     }
 
-    async deleteUser(user_id: number): Promise<User | null> {
+    async deleteUser(user_id: number): Promise<boolean | null> {
         const query = "UPDATE users SET deleted_at = ?, deleted = 1 WHERE user_id = ?";
         const date = new Date();
         const [result]:any = await db.query(query, [date, user_id]);
@@ -67,6 +67,6 @@ export class MySqlUserRepository implements UserService {
             return null;
         }
 
-        return result;
+        return true;
     }
 }

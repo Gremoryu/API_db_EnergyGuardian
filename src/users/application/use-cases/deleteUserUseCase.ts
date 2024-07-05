@@ -4,14 +4,14 @@ import { UserService } from "../../domain/services/UserService";
 export class DeleteUserUseCase {
     constructor(private readonly userService: UserService) {}
 
-    async execute(user_id: number): Promise<User | null> {
+    async execute(user_id: number): Promise<boolean | null> {
         try {
             const user = await this.userService.getUserById(user_id);
             if (!user) {
                 throw new Error("User not found");
             }
-
-            return await this.userService.deleteUser(user_id);
+            const deletedUser = await this.userService.deleteUser(user_id);
+            return deletedUser;
         }
         catch (error) {
             return null;
