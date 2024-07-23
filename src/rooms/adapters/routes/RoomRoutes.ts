@@ -8,9 +8,9 @@ import { updateRoomController } from "../../infrastructure/RoomDependencies";
 const RoomRouter = Router();
 
 RoomRouter
-    .get('/rooms/:id', (req, res) => getRoomsByUserIdController.handle(req, res))
-    .post('/rooms', (req, res) => createRoomController.handle(req, res))
-    .put('/rooms/:id', (req, res) => updateRoomController.handle(req, res))
-    .delete('/rooms/:id', (req, res) => deleteRoomController.handle(req, res));
+    .get('/:id', (req, res) => getRoomsByUserIdController.handle(req, res))
+    .post('/', (req, res) => createRoomController.handle(req, res))
+    .put('/:id', (req, res) => updateRoomController.handle(req, res))
+    .delete('/:id', (req, res) => deleteRoomController.handle(req, res));
 
 export default RoomRouter;
