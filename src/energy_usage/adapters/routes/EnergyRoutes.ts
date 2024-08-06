@@ -8,7 +8,10 @@ const EnergyRouter = Router();
 
 EnergyRouter
     .get('/:id', (req, res) => getConsumptionByDateController.handle(req, res))
-    .get('/room/:id', (req, res) => getConsumptionByRoomController.handle(req, res))
+    .get('/room/:id', (req, res) => {
+        console.log('GET /room/:id request received');
+        getConsumptionByRoomController.handle(req, res);
+    })
     .post('/', (req, res) => createEnergyController.handle(req, res));
 
 export default EnergyRouter;
